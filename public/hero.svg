@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" width="1440" height="560" preserveAspectRatio="none" viewBox="0 0 1440 560"><g mask="url(&quot;#SvgjsMask1088&quot;)" fill="none"><rect width="1440" height="560" x="0" y="0" fill="rgba(16, 20, 44, 1)"></rect><path d="M938.468,441.258C996.925,440.8,1058.301,422.593,1086.405,371.333C1113.726,321.5,1092.289,262.728,1063.076,213.98C1034.9,166.963,993.203,127.388,938.468,124.47C878.67,121.282,819.689,148.218,788.506,199.341C756.068,252.521,753.637,320.74,786.457,373.685C817.77,424.199,879.038,441.724,938.468,441.258" fill="rgba(255, 255, 255, 0.19)" class="triangle-float1"></path><path d="M346.537,765.569C396.943,764.06,440.403,731.234,463.347,686.327C484.355,645.21,477.841,596.331,452.837,557.514C429.898,521.903,388.887,505.926,346.537,504.992C302.161,504.014,256.923,516.05,231.797,552.641C203.111,594.415,192.912,649.093,216.951,693.703C242.064,740.306,293.622,767.153,346.537,765.569" fill="rgba(255, 255, 255, 0.19)" class="triangle-float3"></path><path d="M375.634,385.202C403.671,384.649,430.523,372.953,445.356,349.155C461.094,323.906,465.628,291.279,449.931,266.005C434.89,241.787,404.086,235.096,375.634,236.894C350.502,238.482,329.701,253.343,315.998,274.47C300.644,298.143,287.596,327.163,300.975,352.005C314.816,377.706,346.449,385.778,375.634,385.202" fill="rgba(255, 255, 255, 0.19)" class="triangle-float3"></path><path d="M170.121,256.495C207.964,257.011,244.55,238.838,263.193,205.901C281.586,173.406,278.421,132.678,257.842,101.521C239.132,73.193,204.049,63.778,170.121,64.985C138.566,66.108,109.63,80.822,92.585,107.401C73.941,136.475,65.413,172.777,81.348,203.419C98.397,236.203,133.172,255.991,170.121,256.495" fill="rgba(255, 255, 255, 0.19)" class="triangle-float1"></path></g><defs><mask id="SvgjsMask1088"><rect width="1440" height="560" fill="#ffffff"></rect></mask><style>
+                @keyframes float1 {
+                    0%{transform: translate(0, 0)}
+                    50%{transform: translate(-10px, 0)}
+                    100%{transform: translate(0, 0)}
+                }
+
+                .triangle-float1 {
+                    animation: float1 5s infinite;
+                }
+
+                @keyframes float2 {
+                    0%{transform: translate(0, 0)}
+                    50%{transform: translate(-5px, -5px)}
+                    100%{transform: translate(0, 0)}
+                }
+
+                .triangle-float2 {
+                    animation: float2 4s infinite;
+                }
+
+                @keyframes float3 {
+                    0%{transform: translate(0, 0)}
+                    50%{transform: translate(0, -10px)}
+                    100%{transform: translate(0, 0)}
+                }
+
+                .triangle-float3 {
+                    animation: float3 6s infinite;
+                }
+            </style></defs></svg>

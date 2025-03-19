@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+
+@font-face {
+  font-family: 'Lexend Deca';
+  src: url('/frontend/src/assets/Lexend_Deca/LexendDeca-VariableFont_wght.ttf');
+}
+
+@font-face {
+  font-family: 'PT Serif';
+  src: url('/frontend/src/assets/PT_Serif/PTSerif-Regular.ttf');
+}
+
+@layer base {
+  body {
+    font-family: 'Roboto', sans-serif;
+  }
+}
+
+h2 {
+  font-family: 'Roboto', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  min-height: 100vh;
+}
+
+.maintitle {
+  font-optical-sizing: auto;
+  font-weight: bolder;
+}
+
+.hero-background {
+  background-color: #000000;
+  min-height: 100vh;
+  display: flex;
+  place-items: center;
+}
+
+.glass-container {
+  background: #e6e8ece0;
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  text-align: left;
+}
