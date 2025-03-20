@@ -45,7 +45,7 @@ const Contact = () => {
                     href="mailto:Info@iqrainternational.com.au"
                     className="underline"
                   >
-                    Info@iqrainternational.com.au
+                    info@iqrainternational.com.au
                   </a>
                 </li>
                 <li className="flex items-center">

@@ -29,7 +29,7 @@ const Navbar: React.FC<NavbarProps> = ({ navItems }) => {
 
         {/* Buttons and menu toggle */}
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-          <a href="mailto:">
+          <a href="mailto:Info@iqrainternational.com.au">
             <button
               type="button"
               className="text-[#2d452b] font-bold text-2xl hover:text-black"
