@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { FaMapMarkerAlt, FaEnvelope, FaBusinessTime } from "react-icons/fa";
 import { motion } from "framer-motion";
 import logo from "/icons/9.svg"
