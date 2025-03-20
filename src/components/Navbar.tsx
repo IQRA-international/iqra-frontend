@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { IoMenu } from "react-icons/io5";
-import iqralogo from "../../public/iqralogo.svg";
+import iqralogonav from "../../public/iqralogonav.jpg";
 
 interface NavItem {
   name: string;
@@ -16,12 +16,11 @@ const Navbar: React.FC<NavbarProps> = ({ navItems }) => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
   return (
-    <nav
-      className="fixed w-full z-[9999] top-0 left-0 transition-all duration-300 bg-[#e2dddc]">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <nav className="fixed w-full z-[9999] top-0 left-0 transition-all duration-300 bg-[#e2dddc]">
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-1">
         {/* Logo and title */}
         <Link to="/" className="grid items-center">
-          <img src={iqralogo} className="h-18" />
+          <img src={iqralogonav} className="h-18" />
           <a
             href="#"
             className="ody text-3xl font-bold text-black mx-2 lg:text-4xl"
@@ -33,9 +32,9 @@ const Navbar: React.FC<NavbarProps> = ({ navItems }) => {
           <a href="mailto:">
             <button
               type="button"
-              className="text-white bg-black focus:outline-none font-medium rounded-2xl text-md px-4 py-3 text-center border border-gray-700 hover:bg-white hover:text-black"
+              className="text-[#2d452b] font-bold text-2xl hover:text-black"
             >
-              Get In Touch
+              Enquire Now
             </button>
           </a>
 
@@ -58,12 +57,12 @@ const Navbar: React.FC<NavbarProps> = ({ navItems }) => {
           } items-center justify-center bg-transparent text-black rounded-lg w-full md:flex md:w-auto md:order-1`}
           id="navbar-sticky"
         >
-          <ul className="flex flex-col text-black w-full p-2 mt-4 font-medium border border-gray-500 rounded-lg bg-white md:space-x-8 md:flex-row md:mt-0 md:border-0 md:bg-transparent md:justify-center">
+          <ul className="flex flex-col text-black w-full p-2 mt-4 font-medium border border-gray-500 rounded-lg bg-white md:space-x-8 md:flex-row md:mt-0 md:border-0 md:bg-transparent md:justify-between">
             {navItems.map((navItem, idx) => (
               <li key={idx} className="w-full">
                 <a
                   href={navItem.link}
-                  className="block font-bold py-2 px-3 text-left rounded-xl hover:bg-gray-100 md:hover:bg-[#e2dddc] md:hover:text-black md:text-black hover:bg-[#e2dddc]"
+                  className="block font-bold py-2 px-3 text-xl text-left md:hover:bg-[#e2dddc] md:hover:text-black md:text-black hover:bg-[#e2dddc]"
                 >
                   {navItem.name}
                 </a>

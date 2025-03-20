@@ -6,15 +6,16 @@ import Consulting from "./components/Consulting";
 import Contact from "./components/Contact";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Trading from "./components/Trading"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   const navItems = [
-    { name: "Home", link: "#home" },
     { name: "Services", link: "#services" },
-    { name: "Training", link: "#training" },
     { name: "Consulting", link: "#consulting" },
+    { name: "Training", link: "#training" },
     { name: "Contact", link: "#contact" },
+    {name:"Sourcing", link:"#sourcing"}
   ];
 
   return (
@@ -23,15 +24,21 @@ function App() {
       <Routes>
         <Route path="/" element={<Hero />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/trading" element={<Trading />} />
+         <Route path="/consulting" element={<Consulting />} />
         <Route path="/training" element={<Training />} />
-        <Route path="/consulting" element={<Consulting />} />
+       
         <Route path="/contact" element={<Contact />} />
+        
       </Routes>
       {/* <Hero /> */}
       <Services />
-      <Training />
+      <Trading/> 
       <Consulting />
+      <Training />
+     
       <Contact />
+      
       <Footer />
     </Router>
   );

@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import picture1 from "../../public/5.png"
+import picture2 from "../../public/6.png"
+import picture3 from "../../public/7.png"
 
 const Consulting = () => {
   const [inView, setInView] = useState(false);
@@ -28,79 +31,93 @@ const Consulting = () => {
   }, []);
 
   return (
-    <section id="consulting" className="py-20 px-4 bg-[#c72a00]">
+    <section id="consulting" className="py-20 px-4 bg-[#2d452b]">
       <div className="container mx-auto text-left">
         <h2
-          className="text-3xl text-center sm:text-4xl font-semibold text-white mb-12"
+          className="text-6xl  font-semibold text-white mb-12"
         >
-          Consulting
+          Consultancy
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
-          {/* Business Growth & Development Consulting */}
+        <h3 className="text-white text-2xl" style={{fontFamily:"Bitter"}}>Refining Strategy, Strengthening Teams, and Optimizing Operations</h3>
+        <h3 className="text-white text-xl" style={{fontFamily:"Bitter"}}>Beyond business setup, IQRA International provides expert consulting services to help businesses refine strategy, structure teams, and maximize efficiency.
+        </h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6 mt-16">
+          {/* Workforce Training & Development */}
           <motion.div
-            className="service-card p-6 bg-white border border-black rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out"
-            initial={{ opacity: 0, y: 30 }} // Start below (y: 30)
+            className="service-card p-6 bg-white border border-black rounded-xl shadow-lg hover:shadow-xl transition duration-300 ease-in-out"
+            initial={{ opacity: 0, y: 30 }} // Start from below (y: 30)
             animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 30 }} // Slide up from bottom
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            <h3 className="text-2xl font-semibold text-black mb-4">
-              Business Growth & Development Consulting
+            <img 
+    src={picture1} 
+    alt="Leadership Training" 
+    className="w-full h-48 object-cover rounded-md mb-4"
+  />
+            <h3 className="text-2xl font-semibold text-[#506a13] mb-4"  style={{fontFamily:"PT Serif"}}>
+            Business Growth & Strategy
             </h3>
-            <ul className="text-lg text-black space-y-4 pl-6 list-disc">
+            <ul className="text-lg text-[#506a13] space-y-4 pl-6 list-disc"  style={{fontFamily:"PT Serif"}}>
               <li>
-                One-on-one consulting sessions to develop growth strategies
+              Developing scalable business models and revenue strategies.
               </li>
               <li>
-                Market research and analysis to identify expansion opportunities
+              Identifying market opportunities and customer engagement strategies.
+
               </li>
-              <li>
-                Business model innovation to improve efficiency and
-                sustainability
-              </li>
+              
             </ul>
           </motion.div>
 
-          {/* Recruitment & Workforce Consulting */}
+          {/* Leadership & Management Training */}
           <motion.div
             className="service-card p-6 bg-white border border-black rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out"
-            initial={{ opacity: 0, y: 30 }} // Start below (y: 30)
+            initial={{ opacity: 0, y: 30 }} // Start from below (y: 30)
             animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 30 }} // Slide up from bottom
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
           >
-            <h3 className="text-2xl font-semibold text-black mb-4">
-              Recruitment & Workforce Consulting
+                <img 
+    src={picture2} 
+    alt="Leadership Training" 
+    className="w-full h-48 object-cover rounded-md mb-4"
+  />
+            <h3 className="text-2xl font-semibold text-[#506a13] mb-4"  style={{fontFamily:"PT Serif"}}>
+            Recruitment & Workforce Solutions
             </h3>
-            <ul className="text-lg text-black space-y-4 pl-6 list-disc">
-              <li>Talent acquisition and retention strategies</li>
+            <ul className="text-lg text-[#506a13] space-y-4 pl-6 list-disc"  style={{fontFamily:"PT Serif"}}>
+              <li>Designing HR and talent acquisition plans for long-term growth.</li>
               <li>
-                Employer branding solutions to attract high-quality
-                professionals
+              Structuring teams for sustainable success and efficiency.
+
               </li>
-              <li>
-                Workforce planning to optimize team structures and performance
-              </li>
+             
             </ul>
           </motion.div>
 
-          {/* Operational & Strategic Consulting */}
+          {/* Digital & Social Media Training */}
           <motion.div
             className="service-card p-6 bg-white border border-black rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out"
-            initial={{ opacity: 0, y: 30 }} // Start below (y: 30)
+            initial={{ opacity: 0, y: 30 }} // Start from below (y: 30)
             animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 30 }} // Slide up from bottom
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
           >
-            <h3 className="text-2xl font-semibold text-black mb-4">
-              Operational & Strategic Consulting
+                <img 
+    src={picture3} 
+    alt="Leadership Training" 
+    className="w-full h-48 object-cover rounded-md mb-4"
+  />
+            <h3 className="text-2xl font-semibold text-[#506a13] mb-4"  style={{fontFamily:"PT Serif"}}>
+            Operational Efficiency & Process Optimization
             </h3>
-            <ul className="text-lg text-black space-y-4 pl-6 list-disc">
-              <li>Streamlining business processes for enhanced productivity</li>
+            <ul className="text-lg text-[#506a13] space-y-4 pl-6 list-disc" style={{fontFamily:"PT Serif"}}>
               <li>
-                Identifying operational gaps and implementing efficiency
-                improvements
+              Improving workflow processes and supply chain management.
               </li>
               <li>
-                Financial and risk advisory for long-term business stability
+              Implementing cost-saving measures and operational best practices.
+
               </li>
+             
             </ul>
           </motion.div>
         </div>

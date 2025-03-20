@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import picture1 from "../../public/2.png"
+import picture2 from "../../public/3.png"
+import picture3 from "../../public/4.png"
 
 const Training = () => {
   const [inView, setInView] = useState(false);
@@ -28,36 +31,41 @@ const Training = () => {
   }, []);
 
   return (
-    <section id="training" className="py-20 px-4 bg-[#e2dddc]">
+    <section id="training" className="py-20 px-4 bg-[#2d452b]">
       <div className="container mx-auto text-left">
         <h2
-          className="text-3xl text-center sm:text-4xl font-semibold text-black mb-12"
+          className="text-6xl font-semibold text-white mb-12"
         >
           Training
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
+        <h3 className="text-white text-2xl" style={{fontFamily:"Bitter"}}>Practical Training for Sustainable Business Growth</h3>
+        <h3 className="text-white text-xl" style={{fontFamily:"Bitter"}}>Our business-focused training programs ensure that business owners, managers, and teams have the skills necessary to adapt, grow, and succeed in competitive markets.</h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6 mt-16">
           {/* Workforce Training & Development */}
           <motion.div
-            className="service-card p-6 bg-white border border-black rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out"
+            className="service-card p-6 bg-white border border-black rounded-xl shadow-lg hover:shadow-xl transition duration-300 ease-in-out"
             initial={{ opacity: 0, y: 30 }} // Start from below (y: 30)
             animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 30 }} // Slide up from bottom
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
-            <h3 className="text-2xl font-semibold text-black mb-4">
-              Workforce Training & Development
+            <img 
+    src={picture1} 
+    alt="Leadership Training" 
+    className="w-full h-48 object-cover rounded-md mb-4"
+  />
+            <h3 className="text-2xl font-semibold text-[#506a13] mb-4"  style={{fontFamily:"PT Serif"}}>
+            Leadership & Business Growth Development
             </h3>
-            <ul className="text-lg text-black space-y-4 pl-6 list-disc">
+            <ul className="text-lg text-[#506a13] space-y-4 pl-6 list-disc"  style={{fontFamily:"PT Serif"}}>
               <li>
-                Industry-specific training modules for corporate teams and
-                institutions
+              Develop sustainable growth plans and long-term success strategies
               </li>
               <li>
-                Interactive training programs to enhance workforce skills and
-                productivity
+              Learn how to manage teams, delegate responsibilities, and drive business performance
               </li>
               <li>
-                Compliance training to align with industry regulations and
-                standards
+              Strategies to navigate challenges, adapt to change, and maintain stability.
+
               </li>
             </ul>
           </motion.div>
@@ -69,17 +77,22 @@ const Training = () => {
             animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 30 }} // Slide up from bottom
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
           >
-            <h3 className="text-2xl font-semibold text-black mb-4">
-              Leadership & Management Training
+                <img 
+    src={picture2} 
+    alt="Leadership Training" 
+    className="w-full h-48 object-cover rounded-md mb-4"
+  />
+            <h3 className="text-2xl font-semibold text-[#506a13] mb-4"  style={{fontFamily:"PT Serif"}}>
+            Leadership & Business Growth Development
             </h3>
-            <ul className="text-lg text-black space-y-4 pl-6 list-disc">
-              <li>Executive coaching and leadership skill development</li>
+            <ul className="text-lg text-[#506a13] space-y-4 pl-6 list-disc"  style={{fontFamily:"PT Serif"}}>
+              <li>Learn how to build a recognizable and credible brand.</li>
               <li>
-                Conflict resolution, team-building, and effective communication
-                training
+              Improve online visibility, customer engagement, and content creation. 
               </li>
               <li>
-                Change management strategies for adapting to business growth
+              Utilize insights to refine marketing efforts and improve business outreach.
+
               </li>
             </ul>
           </motion.div>
@@ -91,20 +104,24 @@ const Training = () => {
             animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 30 }} // Slide up from bottom
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
           >
-            <h3 className="text-2xl font-semibold text-black mb-4">
-              Digital & Social Media Training
+                <img 
+    src={picture3} 
+    alt="Leadership Training" 
+    className="w-full h-48 object-cover rounded-md mb-4"
+  />
+            <h3 className="text-2xl font-semibold text-[#506a13] mb-4"  style={{fontFamily:"PT Serif"}}>
+            Workforce & HR Development Solutions
             </h3>
-            <ul className="text-lg text-black space-y-4 pl-6 list-disc">
+            <ul className="text-lg text-[#506a13] space-y-4 pl-6 list-disc"  style={{fontFamily:"PT Serif"}}>
               <li>
-                Social media best practices for businesses and institutions
+              Equip teams with the skills to meet business goals and improve efficiency
               </li>
               <li>
-                Content creation, engagement strategies, and digital branding
-                training
+              Develop strategies to improve collaboration, reduce turnover, and foster a positive work environment.
               </li>
               <li>
-                Data-driven marketing techniques for increasing visibility and
-                outreach
+              Ensure businesses meet legal requirements and create a structured HR system.
+
               </li>
             </ul>
           </motion.div>

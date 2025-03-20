@@ -1,105 +1,103 @@
 import { useState, useEffect } from "react";
 import { FaMapMarkerAlt, FaEnvelope, FaBusinessTime } from "react-icons/fa";
 import { motion } from "framer-motion";
+import logo from "/icons/9.svg"
+import banner from "/icons/10.svg"
 
 const Contact = () => {
-  const [inView, setInView] = useState(false);
-
-  const observerOptions: IntersectionObserverInit = {
-    rootMargin: "0px",
-    threshold: 0.5, // 50% of the element must be visible to trigger the animation
-  };
-
-  const handleObserver = (entries: IntersectionObserverEntry[]) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        setInView(true);
-      }
-    });
-  };
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(handleObserver, observerOptions);
-    const elements = document.querySelectorAll(".contact-card");
-    elements.forEach((element) => observer.observe(element));
-
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
-
   return (
-    <section id="contact" className="py-20 px-4 bg-[#a6a6a6] text-white">
-      <div className="container mx-auto">
-        <h2 className="text-3xl text-center font-semibold text-black mb-8">
-          Contact Us
-        </h2>
-
-        {/* Contact Info */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {/* Address */}
-          <motion.div
-            className="contact-card p-6 bg-white border border-gray-300 rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out"
-            initial={{ opacity: 0, y: 30 }} // Start below (y: 30)
-            animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 30 }} // Slide up from bottom
-            transition={{ duration: 0.7, ease: "easeOut" }}
+    <section id="contact" className="py-16 px-4 bg-[#f7f4f0] text-white">
+      <div className="container mx-auto max-w-5xl">
+        {/* Left-Aligned Text */}
+        <div className="max-w-xl text-left">
+          <img src={logo} alt="Iqra International" className="w-full h-full mx-auto" />
+          <h3
+            className="text-2xl font-semibold text-black pt-1"
+            style={{ fontFamily: "Bitter" }}
           >
-            <div className="flex items-center mb-4">
-              <FaMapMarkerAlt className="text-4xl text-[#c72a00] mr-4" />
-              <h3 className="text-xl font-semibold text-black">Address</h3>
-            </div>
-            <p className="text-lg sm:text-xl font-medium text-[#c72a00]">
-              <b>Suite 2, 38 Railway Pde, Lakemba, NSW 2195</b>
-            </p>
-          </motion.div>
-
-          {/* Email */}
-          <motion.div
-            className="contact-card p-6 bg-white border border-gray-300 rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out"
-            initial={{ opacity: 0, y: 30 }} // Start below (y: 30)
-            animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 30 }} // Slide up from bottom
-            transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
-          >
-            <div className="flex items-center mb-4">
-              <FaEnvelope className="text-4xl text-[#c72a00] mr-4" />
-              <h3 className="text-xl font-semibold text-black">Email</h3>
-            </div>
-            <p className="text-lg sm:text-xl font-medium text-[#c72a00]">
-              <b>
-                <a
-                  href="mailto:"
-                  className="text-[#58a6f8] hover:underline"
-                >
-                  iqra@gmail.com
-                </a>
-              </b>
-            </p>
-          </motion.div>
-
-          {/* ABN */}
-          <motion.div
-            className="contact-card p-6 bg-white border border-gray-300 rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out"
-            initial={{ opacity: 0, y: 30 }} // Start below (y: 30)
-            animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 30 }} // Slide up from bottom
-            transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
-          >
-            <div className="flex items-center mb-4">
-              <FaBusinessTime className="text-4xl text-[#c72a00] mr-4" />
-              <h3 className="text-xl font-semibold text-black">ABN</h3>
-            </div>
-            <p className="text-lg sm:text-xl font-medium text-[#c72a00]">
-              <b>93 615 746 426</b>
-            </p>
-          </motion.div>
+            is ready to help build and grow your business.
+            <br />
+            Let’s discuss your needs and find the best solutions for you.
+          </h3>
         </div>
 
-        {/* Drop us a mail */}
-        <div className="flex justify-center mt-8">
-          <a href="mailto:">
-            <button className="bg-black hover:bg-white border border-gray-400 px-8 py-4 rounded-3xl text-white font-semibold text-md md:text-lg transition duration-300 ease-in-out">
-              Drop Us a Mail
-            </button>
-          </a>
+        {/* Main Container with Two Columns */}
+        <div
+          className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start mt-10"
+          style={{ fontFamily: "Bitter" }}
+        >
+          <div>
+            {/* Contact Information Box - SHORTER HEIGHT */}
+            <motion.div
+              className="p-6 bg-[#2d4b2a] text-white rounded-lg shadow-lg h-auto max-h-[250px] flex flex-col justify-center"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+            >
+              <h3 className="text-2xl font-bold mb-4">Contact Information</h3>
+              <ul className="space-y-3 text-lg">
+                <li className="flex items-center">
+                  <FaMapMarkerAlt className="text-xl text-[#c4d8b5] mr-3" />
+                  Suite 1, 38 Railway Pde, Lakemba, NSW 2195
+                </li>
+                <li className="flex items-center">
+                  <FaEnvelope className="text-xl text-[#c4d8b5] mr-3" />
+                  <a
+                    href="mailto:Info@iqrainternational.com.au"
+                    className="underline"
+                  >
+                    Info@iqrainternational.com.au
+                  </a>
+                </li>
+                <li className="flex items-center">
+                  <FaBusinessTime className="text-xl text-[#c4d8b5] mr-3" />
+                  ABN: 80 631 555 505
+                </li>
+              </ul>
+            </motion.div>
+            <div className="my-auto">
+              <img src={banner} alt="Iqra International" className="w-full h-full mx-auto p-10" />
+            </div>
+          </div>
+
+          {/* Enquiry Form - TALLER HEIGHT */}
+          <motion.div
+            className="p-6 bg-[#2d4b2a] text-white rounded-lg shadow-lg h-auto flex flex-col justify-between"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+          >
+            <h3 className="text-2xl font-bold mb-4">Submit your enquiry</h3>
+            <form className="space-y-4 flex-grow">
+              <input
+                type="text"
+                placeholder="Full Name"
+                className="w-full p-3 rounded-md bg-white text-black border-none"
+              />
+              <input
+                type="email"
+                placeholder="Email Address"
+                className="w-full p-3 rounded-md bg-white text-black border-none"
+              />
+              <input
+                type="text"
+                placeholder="Phone Number"
+                className="w-full p-3 rounded-md bg-white text-black border-none"
+              />
+              <input
+                type="text"
+                placeholder="Business Name (if applicable)"
+                className="w-full p-3 rounded-md bg-white text-black border-none"
+              />
+              <textarea
+                placeholder="Enquiry Details"
+                className="w-full p-3 h-24 rounded-md bg-white text-black border-none"
+              ></textarea>
+              <button className="w-full bg-[#f4e8d5] text-[#2d4b2a] py-3 rounded-md font-semibold">
+                Submit
+              </button>
+            </form>
+          </motion.div>
         </div>
       </div>
     </section>
