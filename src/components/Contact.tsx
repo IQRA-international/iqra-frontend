@@ -67,32 +67,53 @@ const Contact = () => {
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
           >
             <h3 className="text-2xl font-bold mb-4">Submit your enquiry</h3>
-            <form className="space-y-4 flex-grow">
+            <form
+              action="https://formsubmit.co/info@iqrainternational.com.au"
+              method="POST"
+              className="space-y-4 flex-grow"
+            >
+              {/* Formsubmit settings */}
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_next" value="https://www.iqrainternational.com.au/thank-you" />
+              <input type="hidden" name="_subject" value="New Enquiry from IQRA Website" />
+
+              {/* Actual form inputs */}
               <input
                 type="text"
+                name="name"
                 placeholder="Full Name"
+                required
                 className="w-full p-3 rounded-md bg-white text-black border-none"
               />
               <input
                 type="email"
+                name="email"
                 placeholder="Email Address"
+                required
                 className="w-full p-3 rounded-md bg-white text-black border-none"
               />
               <input
                 type="text"
+                name="phone"
                 placeholder="Phone Number"
                 className="w-full p-3 rounded-md bg-white text-black border-none"
               />
               <input
                 type="text"
+                name="business"
                 placeholder="Business Name (if applicable)"
                 className="w-full p-3 rounded-md bg-white text-black border-none"
               />
               <textarea
+                name="message"
                 placeholder="Enquiry Details"
+                required
                 className="w-full p-3 h-24 rounded-md bg-white text-black border-none"
               ></textarea>
-              <button className="w-full bg-[#f4e8d5] text-[#2d4b2a] py-3 rounded-md font-semibold">
+              <button
+                type="submit"
+                className="w-full bg-[#f4e8d5] text-[#2d4b2a] py-3 rounded-md font-semibold"
+              >
                 Submit
               </button>
             </form>

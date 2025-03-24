@@ -1,13 +1,17 @@
 import "./App.css";
-import Hero from "./components/Hero";
-import Services from "./components/Services";
-import Training from "./components/Training";
-import Consulting from "./components/Consulting";
-import Contact from "./components/Contact";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Trading from "./components/Trading"
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
+import Home from "./pages/Home";
+import Services from "./components/Services";
+import Trading from "./components/Trading";
+import Consulting from "./components/Consulting";
+import Contact from "./components/Contact";
+import Privacy from "./components/Privacy";
+import Terms from "./components/Terms";
+import Location from "./components/Location";
+import ThankYou from "./pages/ThankYou";
 
 function App() {
   const navItems = [
@@ -15,30 +19,23 @@ function App() {
     { name: "Consulting", link: "#consulting" },
     { name: "Training", link: "#training" },
     { name: "Contact", link: "#contact" },
-    {name:"Sourcing", link:"#trading"}
+    { name: "Sourcing", link: "#trading" },
   ];
 
   return (
     <Router>
       <Navbar navItems={navItems} />
       <Routes>
-        <Route path="/" element={<Hero />} />
+        <Route path="/" element={<Home />} />
         <Route path="/services" element={<Services />} />
         <Route path="/trading" element={<Trading />} />
-         <Route path="/consulting" element={<Consulting />} />
-        <Route path="/trading" element={<Trading />} />
-       
+        <Route path="/consulting" element={<Consulting />} />
         <Route path="/contact" element={<Contact />} />
-        
+        <Route path="/location" element={<Location />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/thank-you" element={<ThankYou />} />
       </Routes>
-      {/* <Hero /> */}
-      <Services />
-      <Trading/> 
-      <Consulting />
-      <Training />
-     
-      <Contact />
-      
       <Footer />
     </Router>
   );

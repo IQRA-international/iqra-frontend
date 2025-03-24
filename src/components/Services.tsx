@@ -28,7 +28,7 @@ const Services = () => {
   }, []);
 
   return (
-    <section id="services" className="py-20 px-4 bg-white border-t-1 border-[#beb99b8f]">
+    <section id="services" className="py-20 px-4 bg-white border-t-1 border-[#17611091]">
       <div className="container mx-auto text-left">
         <h2
           className="text-4xl text-initial sm:text-6xl font-semibold text-[#2d452b] mb-12"

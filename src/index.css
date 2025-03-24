@@ -71,13 +71,30 @@ section {
   text-align: left;
 }
 
-.tradingContainer {
-  grid-column: 5;
-}
-
-@media (max-width: 1536px) {
-  .tradingContainer {
-    grid-column: 3;
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
   }
 }
 
+.shine-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 100%);
+  animation: shine 4s infinite ease-in-out;
+}
+
+.shine-button:hover::before {
+  animation-play-state: running;
+}

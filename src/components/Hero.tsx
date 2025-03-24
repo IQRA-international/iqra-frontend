@@ -51,7 +51,7 @@ const Hero = () => {
           transition={{ duration: 0.5, ease: "easeOut", delay: 0.7 }}
         >
           <a href="mailto:Info@iqrainternational.com.au">
-            <button className="bg-white hover:bg-[#1c3a23] border border-gray-400 px-8 py-2 rounded-full font-extrabold text-[#2d452b] hover:text-white text-sm md:text-xl transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg">
+            <button className="shine-button bg-white hover:bg-[#1c3a23] border border-gray-400 px-8 py-2 rounded-full font-extrabold text-[#2d452b] hover:text-white text-sm md:text-xl transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg">
               Book a<br /> Consultation
             </button>
           </a>

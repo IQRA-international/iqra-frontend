@@ -28,11 +28,11 @@ const Navbar: React.FC<NavbarProps> = ({ navItems }) => {
         </Link>
 
         {/* Buttons and menu toggle */}
-        <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+        <div className="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <a href="mailto:Info@iqrainternational.com.au">
             <button
               type="button"
-              className="text-[#2d452b] font-bold text-2xl hover:text-black"
+              className="text-[#2d452b] flex items-center justify-center font-bold text-xl md:text-2xl hover:text-black"
             >
               Enquire Now
             </button>
@@ -41,7 +41,7 @@ const Navbar: React.FC<NavbarProps> = ({ navItems }) => {
           {/* Mobile menu toggle */}
           <button
             type="button"
-            className="menu-toggle text-black inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+            className="menu-toggle text-[#2d452b] inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden hover:bg-gray-100"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-expanded={menuOpen}
           >
@@ -52,9 +52,8 @@ const Navbar: React.FC<NavbarProps> = ({ navItems }) => {
 
         {/* Links */}
         <div
-          className={`${
-            menuOpen ? "block" : "hidden"
-          } items-center justify-center bg-transparent text-black rounded-lg w-full md:flex md:w-auto md:order-1`}
+          className={`${menuOpen ? "block" : "hidden"
+            } items-center justify-center bg-transparent text-black rounded-lg w-full md:flex md:w-auto md:order-1`}
           id="navbar-sticky"
         >
           <ul className="flex flex-col text-black w-full p-2 mt-4 font-medium border border-gray-500 rounded-lg bg-white md:space-x-8 md:flex-row md:mt-0 md:border-0 md:bg-transparent md:justify-between">
