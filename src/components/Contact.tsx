@@ -11,7 +11,7 @@ const Contact = () => {
         <div className="max-w-xl text-left">
           <img src={logo} alt="Iqra International" className="w-full h-full mx-auto" />
           <h3
-            className="text-2xl font-semibold text-black pt-1"
+            className="text-xl md:text-2xl font-semibold text-black pt-1"
             style={{ fontFamily: "Bitter" }}
           >
             is ready to help build and grow your business.

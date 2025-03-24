@@ -15,7 +15,7 @@ function App() {
     { name: "Consulting", link: "#consulting" },
     { name: "Training", link: "#training" },
     { name: "Contact", link: "#contact" },
-    {name:"Sourcing", link:"#sourcing"}
+    {name:"Sourcing", link:"#trading"}
   ];
 
   return (
@@ -26,7 +26,7 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/trading" element={<Trading />} />
          <Route path="/consulting" element={<Consulting />} />
-        <Route path="/training" element={<Training />} />
+        <Route path="/trading" element={<Trading />} />
        
         <Route path="/contact" element={<Contact />} />
         

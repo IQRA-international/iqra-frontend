@@ -17,7 +17,7 @@ const Navbar: React.FC<NavbarProps> = ({ navItems }) => {
 
   return (
     <nav className="fixed w-full z-[9999] top-0 left-0 transition-all duration-300 bg-[#e2dddc]">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-1">
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
         {/* Logo and title */}
         <Link to="/" className="grid items-center">
           <img src={iqralogonav} className="h-18" />

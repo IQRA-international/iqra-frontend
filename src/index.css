@@ -70,3 +70,14 @@ section {
   backdrop-filter: blur(10px);
   text-align: left;
 }
+
+.tradingContainer {
+  grid-column: 5;
+}
+
+@media (max-width: 1536px) {
+  .tradingContainer {
+    grid-column: 3;
+  }
+}
+

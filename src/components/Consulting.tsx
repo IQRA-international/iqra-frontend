@@ -34,7 +34,7 @@ const Consulting = () => {
     <section id="consulting" className="py-20 px-4 bg-[#2d452b]">
       <div className="container mx-auto text-left">
         <h2
-          className="text-6xl  font-semibold text-white mb-12"
+          className="text-4xl sm:text-6xl font-semibold text-white mb-12"
         >
           Consultancy
         </h2>

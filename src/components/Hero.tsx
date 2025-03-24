@@ -13,10 +13,10 @@ const Hero = () => {
     >
       <div className="container mx-auto text-left relative z-10">
         {/* Glass Effect Container with grid-rows-2 */}
-        <div className="text-black mx-auto rounded-xl backdrop-blur-sm max-w-4xl">
-          <div className="grid grid-rows-2">
+        <div className="text-black mx-auto rounded-xl backdrop-blur-sm max-w-sm sm:max-w-md md:max-w-4xl">
+          <div className="flex flex-col">
             {/* Top Section: Main Heading and Main Description */}
-            <div className="green-container p-8">
+            <div className="green-container p-8 sm:p-8">
               {/* Main Heading */}
               <motion.h1
                 className="maintitle text-white text-2xl sm:text-3xl md:text-5xl font-extrabold"
@@ -29,7 +29,7 @@ const Hero = () => {
             </div>
 
             {/* Bottom Section: Why Choose Us List */}
-            <div className="white-container p-8 text-2xl text-[#2d452b]" style={{fontFamily:"Bitter"}}>
+            <div className="white-container p-8 sm:p-8 text-2xl text-[#2d452b]" style={{ fontFamily: "Bitter" }}>
               <ul className="">
                 <motion.li
                   initial={{ opacity: 0, x: -30 }}
@@ -51,8 +51,8 @@ const Hero = () => {
           transition={{ duration: 0.5, ease: "easeOut", delay: 0.7 }}
         >
           <a href="mailto:Info@iqrainternational.com.au">
-            <button className="bg-white hover:bg-[#1c3a23] border border-gray-400 px-8 py-2 rounded-full font-extrabold text-[#2d452b] hover:text-white text-xl md:text-xl transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg">
-              Book a<br/> Consultation
+            <button className="bg-white hover:bg-[#1c3a23] border border-gray-400 px-8 py-2 rounded-full font-extrabold text-[#2d452b] hover:text-white text-sm md:text-xl transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg">
+              Book a<br /> Consultation
             </button>
           </a>
         </motion.div>
