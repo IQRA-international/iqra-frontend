@@ -1,73 +1,66 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { IoMenu } from "react-icons/io5";
 import iqralogonav from "../../public/iqralogonav.jpg";
 
-interface NavItem {
-  name: string;
-  link: string;
-}
-
-interface NavbarProps {
-  navItems: NavItem[];
-}
+interface NavItem { name: string; link: string; }
+interface NavbarProps { navItems: NavItem[]; }
 
 const Navbar: React.FC<NavbarProps> = ({ navItems }) => {
-  const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 60);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <nav className="fixed w-full z-[9999] top-0 left-0 transition-all duration-300 bg-[#e2dddc]">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
-        {/* Logo and title */}
-        <Link to="/" className="grid items-center">
-          <img src={iqralogonav} className="h-18" />
-          <a
-            href="#"
-            className="ody text-3xl font-bold text-black mx-2 lg:text-4xl"
-          />
+    <nav className={`fixed w-full z-[9998] top-0 left-0 transition-all duration-700 ${
+      scrolled
+        ? "bg-[#0B1A0B]/90 backdrop-blur-xl border-b border-[#EDE5D8]/[0.04] shadow-lg shadow-black/10"
+        : "bg-transparent border-b border-transparent"
+    }`}>
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-5 md:px-10 py-4">
+        <Link to="/" className="flex-shrink-0">
+          <img src={iqralogonav} className={`transition-all duration-500 ${scrolled ? "h-10" : "h-14"} rounded-sm brightness-0 invert opacity-80`} alt="IQRA" />
         </Link>
 
-        {/* Buttons and menu toggle */}
-        <div className="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-          <a href="mailto:Info@iqrainternational.com.au">
-            <button
-              type="button"
-              className="text-[#2d452b] flex items-center justify-center font-bold text-xl md:text-2xl hover:text-black"
-            >
-              Enquire Now
-            </button>
-          </a>
-
-          {/* Mobile menu toggle */}
-          <button
-            type="button"
-            className="menu-toggle text-[#2d452b] inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden hover:bg-gray-100"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-expanded={menuOpen}
-          >
-            <span className="sr-only">Open main menu</span>
-            <IoMenu className="w-6 h-6" />
-          </button>
+        {/* Desktop nav */}
+        <div className="hidden md:flex items-center gap-8">
+          {navItems.map((item, i) => (
+            <a key={i} href={item.link} className="nav-link text-[#EDE5D8]/60 hover:text-[#EDE5D8]">
+              {item.name}
+            </a>
+          ))}
         </div>
 
-        {/* Links */}
-        <div
-          className={`${menuOpen ? "block" : "hidden"
-            } items-center justify-center bg-transparent text-black rounded-lg w-full md:flex md:w-auto md:order-1`}
-          id="navbar-sticky"
-        >
-          <ul className="flex flex-col text-black w-full p-2 mt-4 font-medium border border-gray-500 rounded-lg bg-white md:space-x-8 md:flex-row md:mt-0 md:border-0 md:bg-transparent md:justify-between">
-            {navItems.map((navItem, idx) => (
-              <li key={idx} className="w-full">
-                <a
-                  href={navItem.link}
-                  className="block font-bold py-2 px-3 text-xl text-left md:hover:bg-[#e2dddc] md:hover:text-black md:text-black hover:bg-[#e2dddc]"
-                >
-                  {navItem.name}
-                </a>
-              </li>
-            ))}
-          </ul>
+        {/* CTA */}
+        <a href="mailto:Info@iqrainternational.com.au" className="hidden md:block">
+          <span className="btn-primary inline-block text-[#EDE5D8] border border-[#EDE5D8]/10 px-6 py-2.5 hover:border-[#D4A853]">
+            <span className="btn-fill" />
+            <span className="relative z-[1]">Get in Touch</span>
+          </span>
+        </a>
+
+        {/* Mobile hamburger */}
+        <button className="md:hidden flex flex-col gap-[5px] p-2" onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu">
+          <span className={`block w-5 h-[1.5px] bg-[#EDE5D8] transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-[6.5px]" : ""}`} />
+          <span className={`block w-5 h-[1.5px] bg-[#EDE5D8] transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} />
+          <span className={`block w-5 h-[1.5px] bg-[#EDE5D8] transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-[6.5px]" : ""}`} />
+        </button>
+      </div>
+
+      {/* Mobile menu */}
+      <div className={`md:hidden transition-all duration-500 overflow-hidden ${menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}`}>
+        <div className="bg-gradient-to-b from-[#0B1A0B] to-[#142814] border-t border-[#EDE5D8]/[0.04] px-6 py-6 flex flex-col gap-4">
+          {navItems.map((item, i) => (
+            <a key={i} href={item.link} onClick={() => setMenuOpen(false)} className="nav-link text-[#EDE5D8]/60 hover:text-[#EDE5D8] py-1">
+              {item.name}
+            </a>
+          ))}
+          <div className="h-px bg-[#EDE5D8]/[0.04] my-2" />
+          <a href="mailto:Info@iqrainternational.com.au" className="nav-link text-[#D4A853]">Get in Touch</a>
         </div>
       </div>
     </nav>

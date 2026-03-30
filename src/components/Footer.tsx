@@ -1,28 +1,38 @@
 import React from 'react';
-import iqralogo from '../../public/iqralogo.png';
+import iqralogo from '../../public/iqralogo.svg';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="relative mt-20 bg-gradient-to-t from-[#2d452b] to-[#1b2c1a] px-4 pt-20 border-b-4 border-[#f5a623]">
-      <div className="absolute -top-12 left-1/2 h-24 w-24 -translate-x-1/2 rounded-full border-4 border-black bg-white p-4 shadow-lg">
-        <img className="h-full object-contain" src={iqralogo} alt="Logo" />
+    <footer className="bg-[#070F07] px-5 md:px-10 pt-16 pb-10 border-t border-[#EDE5D8]/[0.03]">
+      <div className="max-w-7xl mx-auto">
+        {/* Top */}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-12">
+          <img src={iqralogo} alt="IQRA" className="h-28 md:h-36 opacity-60 brightness-0 invert" />
+          <nav className="flex flex-wrap justify-center gap-6 md:gap-8">
+            {[
+              { href: "/location", label: "Location" },
+              { href: "/contact", label: "Support" },
+              { href: "/privacy", label: "Privacy" },
+              { href: "/terms", label: "Terms" },
+            ].map(({ href, label }) => (
+              <a key={href} href={href} className="footer-link text-[#EDE5D8]/30 hover:text-[#D4A853]">{label}</a>
+            ))}
+          </nav>
+        </div>
+
+        {/* Divider */}
+        <div className="h-px bg-[#EDE5D8]/[0.03] mb-8" />
+
+        {/* Bottom */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-[#EDE5D8]/15 text-[10px] tracking-[0.2em] uppercase">
+            © {new Date().getFullYear()} IQRA International
+          </p>
+          <p className="text-[#EDE5D8]/10 text-[10px] tracking-[0.2em] uppercase">
+            All Rights Reserved
+          </p>
+        </div>
       </div>
-
-      {/* Navigation Links */}
-      <nav
-        aria-label="Footer Navigation"
-        className="mx-auto mb-10 flex max-w-lg flex-col gap-6 text-center sm:flex-row sm:justify-center sm:text-left"
-      >
-        <a href="/location" className="font-medium text-white hover:text-[#f5a623] transition duration-300">Location</a>
-        <a href="/contact" className="font-medium text-white hover:text-[#f5a623] transition duration-300">Support</a>
-        <a href="/privacy" className="font-medium text-white hover:text-[#f5a623] transition duration-300">Privacy Policy</a>
-        <a href="/terms" className="font-medium text-white hover:text-[#f5a623] transition duration-300">Terms & Conditions</a>
-      </nav>
-
-      {/* Copyright */}
-      <p className="py-10 text-center text-gray-300 text-sm">
-        © {new Date().getFullYear()} IQRA | All Rights Reserved
-      </p>
     </footer>
   );
 };

@@ -1,62 +1,100 @@
 import { motion } from "framer-motion";
+import SplitText from "./SplitText";
 
 const Hero = () => {
   return (
-    <section
-      id="home"
-      className="hero-background py-32 px-6 relative text-white"
-      style={{
-        backgroundImage: 'url("/hero.jpeg")',
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      <div className="container mx-auto text-left relative z-10">
-        {/* Glass Effect Container with grid-rows-2 */}
-        <div className="text-black mx-auto rounded-xl backdrop-blur-sm max-w-sm sm:max-w-md md:max-w-4xl">
-          <div className="flex flex-col">
-            {/* Top Section: Main Heading and Main Description */}
-            <div className="green-container p-8 sm:p-8">
-              {/* Main Heading */}
-              <motion.h1
-                className="maintitle text-white text-2xl sm:text-3xl md:text-5xl font-extrabold"
-                initial={{ opacity: 0, y: -50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-              >
-                Tailored Solutions for Business Growth & Operations
-              </motion.h1>
-            </div>
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-20">
+      {/* Background with Ken Burns */}
+      <div
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: 'url("/hero.jpeg")',
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          animation: "kenBurns 20s ease-in-out infinite alternate",
+        }}
+      />
 
-            {/* Bottom Section: Why Choose Us List */}
-            <div className="white-container p-8 sm:p-8 text-2xl text-[#2d452b]" style={{ fontFamily: "Bitter" }}>
-              <ul className="">
-                <motion.li
-                  initial={{ opacity: 0, x: -30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
-                >
-                  <b>IQRA International</b> provides tailored business solutions, from product sourcing and operational setup to branding and workforce consulting. We help businesses establish, refine, and scale with strategic, cost-effective support.
-                </motion.li>
-              </ul>
-            </div>
-          </div>
-        </div>
+      {/* Gradient overlays */}
+      <div className="absolute inset-0 z-[1] bg-gradient-to-b from-[#0B1A0B]/70 via-[#0B1A0B]/50 to-[#0B1A0B]/80" />
+      <div className="absolute inset-0 z-[1] bg-gradient-to-r from-[#0B1A0B]/40 via-transparent to-[#0B1A0B]/40" />
 
-        {/* Button */}
-        <motion.div
-          className="flex justify-center pt-10"
+      {/* Gradient orbs */}
+      <div className="orb orb-green top-[10%] right-[-10%] z-[2]" />
+      <div className="orb orb-gold bottom-[10%] left-[-5%] z-[2]" />
+
+      {/* Content */}
+      <div className="relative z-10 text-center px-5 sm:px-8 md:px-12 max-w-5xl mx-auto">
+        {/* Label */}
+        <motion.p
+          className="shiny-text text-[10px] md:text-xs uppercase tracking-[0.3em] mb-6 md:mb-8 font-medium"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, ease: "easeOut", delay: 0.7 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          IQRA International
+        </motion.p>
+
+        {/* Main heading with SplitText */}
+        <h1
+          className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-semibold leading-[0.95] tracking-tight text-[#EDE5D8]"
+          style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+        >
+          <SplitText delay={0.4}>Tailored Solutions for</SplitText>
+          <br />
+          <span className="inline-block overflow-hidden">
+            <motion.em
+              className="font-light not-italic"
+              style={{ fontStyle: "italic" }}
+              initial={{ y: "100%", opacity: 0 }}
+              animate={{ y: "0%", opacity: 1 }}
+              transition={{ duration: 0.7, ease: [0.25, 0.8, 0.25, 1], delay: 0.9 }}
+            >
+              Business Growth
+            </motion.em>
+          </span>
+          {" "}
+          <SplitText delay={1.0}>& Operations</SplitText>
+        </h1>
+
+        {/* Subtitle */}
+        <motion.p
+          className="mt-8 md:mt-12 max-w-xl mx-auto text-sm md:text-base leading-relaxed text-[#EDE5D8]/50 font-light"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 1.3 }}
+        >
+          From product sourcing and operational setup to branding and workforce consulting — strategic, cost-effective support to establish, refine, and scale.
+        </motion.p>
+
+        {/* CTA */}
+        <motion.div
+          className="mt-10 md:mt-14"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 1.6 }}
         >
           <a href="mailto:Info@iqrainternational.com.au">
-            <button className="shine-button bg-white hover:bg-[#1c3a23] border border-gray-400 px-8 py-2 rounded-full font-extrabold text-[#2d452b] hover:text-white text-sm md:text-xl transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg">
-              Book a<br /> Consultation
-            </button>
+            <span className="btn-primary inline-block text-[#EDE5D8] bg-[#2d452b] border border-[#EDE5D8]/10 px-10 py-4 rounded-full hover:border-[#D4A853] transition-all duration-500 hover:shadow-lg hover:shadow-[#D4A853]/10">
+              <span className="btn-fill rounded-full" />
+              <span className="relative z-[1]">Book a Consultation →</span>
+            </span>
           </a>
         </motion.div>
       </div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-3"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 2 }}
+      >
+        <span className="text-[#EDE5D8]/20 text-[9px] uppercase tracking-[0.3em]">Scroll</span>
+        <svg width="14" height="20" viewBox="0 0 14 20" fill="none" className="text-[#EDE5D8]/20" style={{ animation: "scrollBounce 2s ease-in-out infinite" }}>
+          <path d="M7 3V15M7 15L2 10M7 15L12 10" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </motion.div>
     </section>
   );
 };

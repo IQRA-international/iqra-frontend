@@ -1,76 +1,34 @@
 import BackToHomeButton from "./BackHome";
 
+const sections = [
+  { title: "1. Overview", text: "At IQRA International, we are committed to protecting the privacy and personal information of our clients, partners, and website visitors. This Privacy Policy outlines how we collect, use, store, and safeguard the information you provide to us through our services and digital platforms." },
+  { title: "2. Information We Collect", text: "We may collect personal and business-related information including, but not limited to: your name, contact details, company information, project requirements, and communication history." },
+  { title: "3. How We Use Your Information", text: "Information collected is used to deliver tailored business solutions, respond to inquiries, improve our services, and manage client relationships. We may also use your data for internal analytics, marketing communication (with your consent), and legal compliance." },
+  { title: "4. Data Security", text: "We implement industry-standard security measures to protect your information against unauthorized access, alteration, disclosure, or destruction." },
+  { title: "5. Third-Party Sharing", text: "We do not sell or rent your personal information to third parties. Any third-party services used are contractually obligated to comply with data protection regulations." },
+  { title: "6. Your Rights", text: "You have the right to access, correct, or delete your personal information. Contact us at info@iqrainternational.com.au." },
+  { title: "7. Policy Updates", text: "This Privacy Policy may be updated periodically to reflect changes in our practices or legal requirements." },
+];
+
 const Privacy = () => {
-    return (
-        <section
-            id="privacy"
-            className="relative mt-20 bg-gradient-to-t from-[#2d452b] to-[#1b2c1a] px-4 pt-20 border-b-4 border-[#f5a623]"
-        >
-            <div className="container mx-auto text-left max-w-5xl">
-                <h2 className="text-4xl sm:text-6xl font-semibold text-white mb-12">
-                    Privacy Policy
-                </h2>
-
-                <div className="space-y-10 text-white" style={{ fontFamily: "Bitter" }}>
-                    <div>
-                        <h3 className="text-2xl font-semibold mb-4">1. Overview</h3>
-                        <p className="text-lg">
-                            At IQRA International, we are committed to protecting the privacy and personal information of our clients, partners, and website visitors. This Privacy Policy outlines how we collect, use, store, and safeguard the information you provide to us through our services and digital platforms.
-                        </p>
-                    </div>
-
-                    <div>
-                        <h3 className="text-2xl font-semibold mb-4">2. Information We Collect</h3>
-                        <p className="text-lg">
-                            We may collect personal and business-related information including, but not limited to: your name, contact details, company information, project requirements, and communication history. This data is collected through contact forms, consultation bookings, email inquiries, and service engagements.
-                        </p>
-                    </div>
-
-                    <div>
-                        <h3 className="text-2xl font-semibold mb-4">3. How We Use Your Information</h3>
-                        <p className="text-lg">
-                            Information collected is used to deliver tailored business solutions, respond to inquiries, improve our services, and manage client relationships. We may also use your data for internal analytics, marketing communication (with your consent), and legal compliance.
-                        </p>
-                    </div>
-
-                    <div>
-                        <h3 className="text-2xl font-semibold mb-4">4. Data Security</h3>
-                        <p className="text-lg">
-                            We implement industry-standard security measures to protect your information against unauthorized access, alteration, disclosure, or destruction. Our team is trained to handle sensitive business data with care and confidentiality.
-                        </p>
-                    </div>
-
-                    <div>
-                        <h3 className="text-2xl font-semibold mb-4">5. Third-Party Sharing</h3>
-                        <p className="text-lg">
-                            We do not sell or rent your personal information to third parties. Any third-party services used (such as payment processors or IT platforms) are contractually obligated to comply with data protection regulations and maintain the confidentiality of your data.
-                        </p>
-                    </div>
-
-                    <div>
-                        <h3 className="text-2xl font-semibold mb-4">6. Your Rights</h3>
-                        <p className="text-lg">
-                            You have the right to access, correct, or delete your personal information. If you wish to exercise any of these rights or have questions about our data practices, please contact us at <a href="mailto:info@iqrainternational.com.au" className="underline text-[#f5a623]">info@iqrainternational.com.au</a>.
-                        </p>
-                    </div>
-
-                    <div>
-                        <h3 className="text-2xl font-semibold mb-4">7. Policy Updates</h3>
-                        <p className="text-lg">
-                            This Privacy Policy may be updated periodically to reflect changes in our practices or legal requirements. We encourage you to review this page regularly to stay informed about how we protect your information.
-                        </p>
-                    </div>
-
-                    <div>
-                        <p className="text-lg italic">Last Updated: March 2025</p>
-                    </div>
-                </div>
-                <div className="flex justify-center mb-10">
-                    <BackToHomeButton />
-                </div>
+  return (
+    <div className="legal-page px-5 md:px-10">
+      <div className="max-w-4xl mx-auto">
+        <span className="shiny-text text-[10px] uppercase tracking-[0.25em] font-medium block mb-4">Legal</span>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight mt-2 mb-12">Privacy Policy</h2>
+        <div className="space-y-10">
+          {sections.map((s, i) => (
+            <div key={i}>
+              <h3 className="font-semibold mb-3">{s.title}</h3>
+              <p>{s.text}</p>
             </div>
-        </section>
-    );
+          ))}
+          <p className="text-[#EDE5D8]/25 text-xs italic">Last Updated: March 2025</p>
+        </div>
+        <BackToHomeButton />
+      </div>
+    </div>
+  );
 };
 
-export default Privacy;  
+export default Privacy;

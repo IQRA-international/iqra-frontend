@@ -1,5 +1,6 @@
 import "./App.css";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
@@ -13,6 +14,12 @@ import Terms from "./components/Terms";
 import Location from "./components/Location";
 import ThankYou from "./pages/ThankYou";
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  return null;
+}
+
 function App() {
   const navItems = [
     { name: "Services", link: "#services" },
@@ -24,6 +31,9 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
+      {/* Film grain noise overlay */}
+      <div className="noise-overlay" />
       <Navbar navItems={navItems} />
       <Routes>
         <Route path="/" element={<Home />} />
