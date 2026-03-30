@@ -18,8 +18,8 @@ const Navbar: React.FC<NavbarProps> = ({ navItems }) => {
   return (
     <nav className={`fixed w-full z-[9998] top-0 left-0 transition-all duration-700 ${
       scrolled
-        ? "bg-[#0B1A0B]/90 backdrop-blur-xl border-b border-[#EDE5D8]/[0.04] shadow-lg shadow-black/10 translate-y-0 opacity-100"
-        : "bg-transparent border-b border-transparent -translate-y-full opacity-0"
+        ? "bg-[#0B1A0B]/90 backdrop-blur-xl border-b border-[#EDE5D8]/[0.04] shadow-lg shadow-black/10"
+        : "bg-transparent border-b border-transparent"
     }`}>
       <div className="max-w-7xl mx-auto flex items-center justify-between px-5 md:px-10 py-4">
         <Link to="/" className="flex-shrink-0">
