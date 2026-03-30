@@ -27,7 +27,7 @@ const Navbar: React.FC<NavbarProps> = ({ navItems }) => {
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-8">
           {navItems.map((item, i) => (
             <a key={i} href={item.link} className="nav-link text-[#EDE5D8]/60 hover:text-[#EDE5D8]">
               {item.name}
@@ -36,7 +36,7 @@ const Navbar: React.FC<NavbarProps> = ({ navItems }) => {
         </div>
 
         {/* CTA */}
-        <a href="mailto:Info@iqrainternational.com.au" className="hidden md:block">
+        <a href="mailto:Info@iqrainternational.com.au" className="hidden lg:block">
           <span className="btn-primary inline-block text-[#EDE5D8] border border-[#EDE5D8]/10 px-6 py-2.5 hover:border-[#D4A853]">
             <span className="btn-fill" />
             <span className="relative z-[1]">Get in Touch</span>
@@ -44,7 +44,7 @@ const Navbar: React.FC<NavbarProps> = ({ navItems }) => {
         </a>
 
         {/* Mobile hamburger */}
-        <button className="md:hidden flex flex-col gap-[5px] p-2" onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu">
+        <button className="lg:hidden flex flex-col gap-[5px] p-2" onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu">
           <span className={`block w-5 h-[1.5px] bg-[#EDE5D8] transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-[6.5px]" : ""}`} />
           <span className={`block w-5 h-[1.5px] bg-[#EDE5D8] transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} />
           <span className={`block w-5 h-[1.5px] bg-[#EDE5D8] transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-[6.5px]" : ""}`} />
@@ -52,7 +52,7 @@ const Navbar: React.FC<NavbarProps> = ({ navItems }) => {
       </div>
 
       {/* Mobile menu */}
-      <div className={`md:hidden transition-all duration-500 overflow-hidden ${menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}`}>
+      <div className={`lg:hidden transition-all duration-500 overflow-hidden ${menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}`}>
         <div className="bg-gradient-to-b from-[#0B1A0B] to-[#142814] border-t border-[#EDE5D8]/[0.04] px-6 py-6 flex flex-col gap-4">
           {navItems.map((item, i) => (
             <a key={i} href={item.link} onClick={() => setMenuOpen(false)} className="nav-link text-[#EDE5D8]/60 hover:text-[#EDE5D8] py-1">
