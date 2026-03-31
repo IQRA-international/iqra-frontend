@@ -3,7 +3,7 @@ import SplitText from "./SplitText";
 
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-20">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 pb-20 bg-[#0B1A0B]">
       {/* Background with Ken Burns */}
       <div
         className="absolute inset-0 z-0"
@@ -16,7 +16,7 @@ const Hero = () => {
       />
 
       {/* Gradient overlays */}
-      <div className="absolute inset-0 z-[1] bg-gradient-to-b from-[#0B1A0B]/70 via-[#0B1A0B]/50 to-[#0B1A0B]/80" />
+      <div className="absolute inset-0 z-[1] bg-gradient-to-b from-[#0B1A0B]/70 via-[#0B1A0B]/50 to-[#0B1A0B]" />
       <div className="absolute inset-0 z-[1] bg-gradient-to-r from-[#0B1A0B]/40 via-transparent to-[#0B1A0B]/40" />
 
       {/* Gradient orbs */}

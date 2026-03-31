@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import iqralogonav from "../../public/iqralogonav.jpg";
 
@@ -7,23 +7,12 @@ interface NavbarProps { navItems: NavItem[]; }
 
 const Navbar: React.FC<NavbarProps> = ({ navItems }) => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > window.innerHeight * 0.85);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   return (
-    <nav className={`fixed w-full z-[9998] top-0 left-0 transition-all duration-700 ${
-      scrolled
-        ? "bg-[#0B1A0B]/90 backdrop-blur-xl border-b border-[#EDE5D8]/[0.04] shadow-lg shadow-black/10"
-        : "bg-transparent border-b border-transparent"
-    }`}>
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-5 md:px-10 py-4">
+    <nav className="fixed w-full z-[9998] top-0 left-0 bg-[#0B1A0B] border-b border-[#EDE5D8]/[0.04]">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-5 md:px-10 py-3">
         <Link to="/" className="flex-shrink-0">
-          <img src={iqralogonav} className={`transition-all duration-500 ${scrolled ? "h-10" : "h-14"} rounded-sm brightness-0 invert opacity-80`} alt="IQRA" />
+          <img src={iqralogonav} className="h-12 rounded-sm brightness-0 invert opacity-80 transition-all duration-300" alt="IQRA" />
         </Link>
 
         {/* Desktop nav */}
